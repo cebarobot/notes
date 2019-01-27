@@ -14,7 +14,7 @@ script:
   - git clone https://github.com/${TRAVIS_REPO_SLUG}.git sources --depth 1 -b sources
   - git clone https://github.com/${TRAVIS_REPO_SLUG}.git generator --depth 1 -b generator
   - cp -a generator/webroot workdir && cp -a sources/{post,content.php,index.md} generator/{mdgen.py,sitegen.php} workdir
-  - cd workdir && mv img/favicon.ico . && php sitegen.php && rm -r post/*.md index.md *.{py,php}
+  - cd workdir && mv img/favicon.ico . && php sitegen.php && rm -r *.{py,php}
   
 deploy:
   provider: pages
